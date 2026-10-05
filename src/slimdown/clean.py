@@ -201,9 +201,12 @@ def to_markdown(clean: str) -> str:
 
 
 _TRACKING = re.compile(r"([?&])(utm_[a-z]+|fbclid|gclid|gbraid|wbraid|mc_cid|mc_eid|_hsenc|_hsmi|mkt_tok|yclid|igshid|ref_src)=[^&#)\s]*", re.I)
-_LINKED_IMG = re.compile(r"\[((?:\s*!\[[^\]]*\]\([^)]*\)\s*(?:\\\\)?\s*)+)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")  # a link around images
-_IMG = re.compile(r"!\[([^\]]*)\]\([^)]*\)")
-_LINK = re.compile(r"(?<!!)\[([^\]]*)\]\(([^)\s]+)(?:\s+\"[^\"]*\")?\)")
+# an address may hold one level of brackets (Wikipedia's File:Drakensberg_(16261357780).jpg): stopping at the first
+# ")" left ".jpg)" lines behind when images were dropped (customer test, 5 Oct 2026)
+_URL = r"(?:[^()\s]|\([^()\s]*\))"
+_LINKED_IMG = re.compile(r"\[((?:\s*!\[[^\]]*\]\(" + _URL + r"*\)\s*(?:\\\\)?\s*)+)\]\((" + _URL + r"+)(?:\s+\"[^\"]*\")?\)")  # a link around images
+_IMG = re.compile(r"!\[([^\]]*)\]\(" + _URL + r"*(?:\s+\"[^\"]*\")?\)")
+_LINK = re.compile(r"(?<!!)\[([^\]]*)\]\((" + _URL + r"+)(?:\s+\"[^\"]*\")?\)")
 
 
 def _strip_tracking(md: str) -> str:

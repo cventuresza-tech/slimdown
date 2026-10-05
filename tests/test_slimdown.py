@@ -203,3 +203,9 @@ def test_plan_matrix_icons_dashes_and_cells():
     md = html_to_markdown(html)
     assert md.count("✓") == 1 and md.count("✗") == 1 and "—" in md
     assert "Standard request Our own network" in md
+
+
+def test_addresses_with_brackets_leave_no_fragments():
+    html = ('<main><h1>South Africa</h1><p>' + 'A country at the southern tip of Africa with nine provinces. ' * 8 + '</p>'
+            '<p><img src="https://upload.wikimedia.org/a/Drakensberg_(16261357780).jpg" alt="Drakensberg"></p></main>')
+    assert ".jpg)" not in html_to_markdown(html)
