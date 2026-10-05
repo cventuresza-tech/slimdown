@@ -103,6 +103,11 @@ def clean_html(html: str, base: str = "", *, main_content: bool = True) -> str:
             n.decompose()
     if root is None:
         return ""
+    # code keeps only its text: highlighters wrap commands in <span>/<font>, which leaked into Markdown code blocks
+    # ("<font color=...>uv run fastapi</font> dev", customer-test agent, 5 Oct 2026)
+    for el in (root.css("pre *") if root else []):
+        if el.tag != "code":
+            el.unwrap()
     # a link around a whole card (headline, summary, time, section) would come out as one glued word-run
     # ("housing protestsPedro Sanchez…ago UK"): separate the card's parts
     for a in root.css("a"):

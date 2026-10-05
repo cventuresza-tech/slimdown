@@ -176,3 +176,10 @@ def test_cli_on_a_file(tmp_path):
 def test_mcp_server_has_read_page():
     from slimdown import mcp_server
     assert callable(mcp_server.read_page) and callable(mcp_server.main)
+
+
+def test_code_blocks_keep_only_text():
+    html = ('<main><h1>Run</h1><p>' + 'Start the server with this command. ' * 10 +
+            '</p><pre><code><font color="#4E9A06">uv run fastapi</font> <span style="color:red">dev</span></code></pre></main>')
+    md = html_to_markdown(html)
+    assert "uv run fastapi dev" in md and "<font" not in md
