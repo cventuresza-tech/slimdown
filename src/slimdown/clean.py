@@ -5,6 +5,7 @@ This is the engine Skryp (https://skryp.dev) uses for its own Markdown output, p
 
 from __future__ import annotations
 
+import html as html_mod
 import re
 from urllib.parse import urljoin, urlsplit
 
@@ -12,7 +13,8 @@ import html_to_markdown as h2m
 from selectolax.lexbor import LexborHTMLParser
 
 # Elements that are never content.
-_ALWAYS_DROP = ("script", "style", "noscript", "template", "iframe", "object", "embed", "canvas", "svg",
+# audio and video players too: their sources came out as raw "[//upload...oga?utm_source=...](...)" links (Wikipedia)
+_ALWAYS_DROP = ("script", "style", "noscript", "template", "iframe", "object", "embed", "canvas", "svg", "audio", "video",
                 "link", "meta", "base", "dialog")
 # Page furniture dropped in main-content mode (tag level).
 _FURNITURE_TAGS = ("header", "footer", "nav", "aside", "form")
@@ -28,7 +30,11 @@ _FURNITURE_NAMES = {
     "announcement", "announcement-bar", "promo-bar", "cookie", "cookies", "consent",
 }
 _FURNITURE_PREFIX = ("cookie-", "cookie_", "consent-", "gdpr", "newsletter-", "advert-", "ad-slot", "ad-container",
-                     "social-share", "share-bar", "onetrust", "cky-", "cmp-", "didomi")
+                     "social-share", "share-bar", "onetrust", "cky-", "cmp-", "didomi",
+                     # consent managers by name (a Termly banner opened ScrapingBee's page, customer test, 5 Oct 2026)
+                     "termly", "osano", "truste", "qc-cmp", "fc-consent", "sp_message", "iubenda", "cc-window",
+                     "cc-banner", "hs-eu-cookie", "cookiescript", "klaro", "borlabs", "moove_gdpr", "cmplz",
+                     "usercentrics", "cookiebot", "cybotcookiebot", "cookie-law", "cookielaw")
 _ZERO_WIDTH = re.compile("[​‌‍﻿]")
 _CARD_PARTS = "div,p,h1,h2,h3,h4,h5,h6,li,ul,ol,section,article,figure,figcaption,time"
 _CONSOLE_TAGS = re.compile(r"</?(?:font|span|b|u)\b[^>]*>")
@@ -138,6 +144,10 @@ def clean_html(html: str, base: str = "", *, main_content: bool = True) -> str:
                     n.decompose()
         for n in root.css('[aria-hidden="true"], [hidden]'):
             n.decompose()
+        # banners labelled for screen readers ("Cookie Consent Prompt") or marked by their consent manager
+        for n in root.css('[aria-label*="ookie"], [aria-label*="onsent"], [data-termly-part], [data-cookie-banner]'):
+            if n.tag not in ("main", "article", "body", "html") and len(n.text(strip=True) or "") < 4000:
+                n.decompose()
     if root is None:
         return ""
     # code keeps only its text: highlighters wrap commands in <span>/<font>, which leaked into Markdown code blocks
@@ -145,11 +155,27 @@ def clean_html(html: str, base: str = "", *, main_content: bool = True) -> str:
     for el in (root.css("pre *") if root else []):
         if el.tag != "code":
             el.unwrap()
+    # a code block's language often sits on a parent (<div class="language-python highlight"><pre><code>), where the
+    # converter does not look: copy it onto the code so the fence says ```python
+    for code in (root.css("pre > code") if root else []):
+        if "language-" in (code.attributes.get("class") or ""):
+            continue
+        node, lang = code, None
+        for _ in range(4):
+            node = node.parent
+            if node is None:
+                break
+            m = re.search(r"(?:^|\s)(?:language|lang)-([\w+#.-]+)", node.attributes.get("class") or "")
+            if m:
+                lang = m.group(1)
+                break
+        if lang:
+            code.attrs["class"] = f"language-{lang} " + (code.attributes.get("class") or "")
     # terminal demos drawn by termynal (FastAPI, Typer and SQLModel docs) keep their colours as tags written into the
     # code's text for a script to draw: "<font color=...>uv run fastapi</font> dev". The command is shown without them.
     for code in (root.css(".termy pre, [data-termynal] pre") if root else []):
         text = code.text(deep=True)
-        plain = _CONSOLE_TAGS.sub("", text)
+        plain = html_mod.unescape(_CONSOLE_TAGS.sub("", text))  # it is HTML for the script: &apos; is a quote
         if plain != text:
             for child in list(code.iter(include_text=True)):
                 child.decompose()
@@ -210,10 +236,16 @@ _LINK = re.compile(r"(?<!!)\[([^\]]*)\]\((" + _URL + r"+)(?:\s+\"[^\"]*\")?\)")
 
 
 def _strip_tracking(md: str) -> str:
+    """Tracking parameters out of link addresses. Only inside a link's (...): run over the whole page, the tidy-up of a
+    left-over "?" deleted every question mark before a space or ")" ("Is it free? Yes." lost its "?", customer test,
+    5 Oct 2026)."""
     def fix(m: re.Match) -> str:
         return m.group(1) if m.group(1) == "?" else ""
-    out = _TRACKING.sub(fix, md)
-    return re.sub(r"\?&", "?", re.sub(r"\?(?=[)\s])", "", out))
+
+    def clean(m: re.Match) -> str:
+        u = _TRACKING.sub(fix, m.group(2)).replace("?&", "?")
+        return m.group(1) + (u[:-1] if u.endswith("?") else u)
+    return re.sub(r"(\]\()(" + _URL + r"+)", clean, md)
 
 
 def _linked_images(m: re.Match) -> str:

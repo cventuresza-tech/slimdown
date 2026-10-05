@@ -209,3 +209,17 @@ def test_addresses_with_brackets_leave_no_fragments():
     html = ('<main><h1>South Africa</h1><p>' + 'A country at the southern tip of Africa with nine provinces. ' * 8 + '</p>'
             '<p><img src="https://upload.wikimedia.org/a/Drakensberg_(16261357780).jpg" alt="Drakensberg"></p></main>')
     assert ".jpg)" not in html_to_markdown(html)
+
+
+def test_question_marks_survive_and_links_lose_tracking():
+    md = html_to_markdown('<main><h1>FAQ</h1><p>' + 'Questions people ask about the plans and the prices. ' * 8 + '</p>'
+                          '<h2>Is it free?</h2><p>Yes (?) mostly. <a href="https://o.example/p?utm_source=n&amp;id=7">x</a></p></main>')
+    assert "Is it free?" in md and "Yes (?) mostly." in md and "(https://o.example/p?id=7)" in md
+
+
+def test_code_language_banners_and_players():
+    md = html_to_markdown('<main><h1>Guide</h1><p>' + 'How to run the example program on your machine. ' * 8 + '</p>'
+                          '<div class="language-python highlight"><pre><code>print(1)</code></pre></div>'
+                          '<div aria-label="Cookie Consent Prompt">We use essential cookies.</div>'
+                          '<p>Listen <audio controls><source src="//u.example/a.oga"></audio> now.</p></main>')
+    assert "```python" in md and "essential cookies" not in md and "a.oga" not in md
