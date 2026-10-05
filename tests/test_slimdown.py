@@ -183,3 +183,23 @@ def test_code_blocks_keep_only_text():
             '</p><pre><code><font color="#4E9A06">uv run fastapi</font> <span style="color:red">dev</span></code></pre></main>')
     md = html_to_markdown(html)
     assert "uv run fastapi dev" in md and "<font" not in md
+
+
+def test_terminal_demos_lose_the_colour_tags_written_into_their_text():
+    html = ('<main><h1>Run</h1><p>' + 'Start the server with this command. ' * 10 + '</p><div class="termy"><pre><code>'
+            '$ &lt;font color=&quot;#4E9A06&quot;&gt;uv run fastapi&lt;/font&gt; dev</code></pre></div>'
+            '<pre><code>&lt;span class="x"&gt;HTML a tutorial shows&lt;/span&gt;</code></pre></main>')
+    md = html_to_markdown(html)
+    assert "$ uv run fastapi dev" in md and '<span class="x">HTML a tutorial shows</span>' in md
+
+
+def test_plan_matrix_icons_dashes_and_cells():
+    intro = "<h1>Pricing</h1><p>" + "Compare what each plan includes for your team and your agents. " * 8 + "</p>"
+    cell = '<div class="row"><span>{}</span></div>'
+    html = (f"<main>{intro}<div><strong>Hobby</strong>" + cell.format('<i class="icon-tick02"></i>') +
+            cell.format('<svg aria-label="Not included"><path d="M0"/></svg>') + cell.format("-") + "</div>"
+            '<a href="/x"><i class="icon-check"></i></a><div><span class="absolute inset-x-0"></span></div>'
+            '<table><tr><th><span>Standard request</span><span class="block">Our own network</span></th><td>1</td></tr></table></main>')
+    md = html_to_markdown(html)
+    assert md.count("✓") == 1 and md.count("✗") == 1 and "—" in md
+    assert "Standard request Our own network" in md

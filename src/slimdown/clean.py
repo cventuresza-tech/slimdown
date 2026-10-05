@@ -31,6 +31,13 @@ _FURNITURE_PREFIX = ("cookie-", "cookie_", "consent-", "gdpr", "newsletter-", "a
                      "social-share", "share-bar", "onetrust", "cky-", "cmp-", "didomi")
 _ZERO_WIDTH = re.compile("[​‌‍﻿]")
 _CARD_PARTS = "div,p,h1,h2,h3,h4,h5,h6,li,ul,ol,section,article,figure,figcaption,time"
+_CONSOLE_TAGS = re.compile(r"</?(?:font|span|b|u)\b[^>]*>")
+# feature tables draw yes and no as icons (<i class="icon-tick02">, <svg aria-label="Included">), which Markdown drops:
+# ScrapingBee's plan matrix came out as feature names with no values (customer-test agent, 5 Oct 2026)
+_ICON_YES = {"tick", "check", "checkmark", "included", "yes"}
+_ICON_NO = {"cross", "times", "xmark", "close", "no", "excluded", "unavailable"}  # not "x": inset-x-0
+_CELLS = {"td", "th", "li", "div", "p", "dd", "dt"}
+_BLOCKS = set(_CARD_PARTS.split(","))
 
 
 def _names(value: str | None) -> set[str]:
@@ -39,6 +46,29 @@ def _names(value: str | None) -> set[str]:
 
 def _is_furniture(names: set[str]) -> bool:
     return bool(names & _FURNITURE_NAMES) or any(n.startswith(_FURNITURE_PREFIX) for n in names)
+
+
+def _icon_mark(node) -> str | None:
+    """✓ or ✗ for an empty icon that is the whole content of its cell, by its class, label or title; else None.
+    Icons inside links and buttons (menus, close buttons) are left alone."""
+    if node.text(strip=True) and node.tag != "svg":
+        return None
+    a = node.attributes
+    words: set[str] = set()
+    for v in (a.get("class"), a.get("aria-label"), a.get("title"), a.get("data-icon")):
+        words.update(re.sub(r"\d+$", "", w) for w in re.split(r"[\s_-]+", (v or "").lower()) if w)
+    if node.tag == "svg" and (t := node.css_first("title")):
+        words.update(re.split(r"\W+", t.text().lower()))
+    yes, no = words & _ICON_YES, words & _ICON_NO
+    mark = "✗" if no or (yes and words & {"not", "without"}) else "✓" if yes else None  # "Not included" is a no
+    if not mark:
+        return None
+    cell = node.parent
+    while cell is not None and cell.tag not in _CELLS:
+        if cell.tag in ("a", "button", "label", "summary"):
+            return None
+        cell = cell.parent
+    return mark if cell is not None and not cell.text(strip=True) else None
 
 
 def _abs(base: str, href: str | None) -> str | None:
@@ -78,6 +108,13 @@ def clean_html(html: str, base: str = "", *, main_content: bool = True) -> str:
     """The HTML that holds the content: no scripts or styles, and in main-content mode no navigation, headers, footers,
     cookie banners, share bars or ads. Links and images are made absolute."""
     tree = LexborHTMLParser(html)
+    for n in tree.css("i, svg, span[class], em[class]"):
+        if (mark := _icon_mark(n)):
+            n.replace_with(mark)
+    for n in tree.css("td, th, div, span, p, li"):
+        c = n.child  # a cell that is only "-" (not included) became an empty list item, which is dropped
+        if c is not None and c.next is None and c.tag == "-text" and (c.text_content or "").strip() in ("-", "–"):
+            c.replace_with("—")
     for sel in _ALWAYS_DROP:
         for n in tree.css(sel):
             n.decompose()
@@ -108,11 +145,27 @@ def clean_html(html: str, base: str = "", *, main_content: bool = True) -> str:
     for el in (root.css("pre *") if root else []):
         if el.tag != "code":
             el.unwrap()
+    # terminal demos drawn by termynal (FastAPI, Typer and SQLModel docs) keep their colours as tags written into the
+    # code's text for a script to draw: "<font color=...>uv run fastapi</font> dev". The command is shown without them.
+    for code in (root.css(".termy pre, [data-termynal] pre") if root else []):
+        text = code.text(deep=True)
+        plain = _CONSOLE_TAGS.sub("", text)
+        if plain != text:
+            for child in list(code.iter(include_text=True)):
+                child.decompose()
+            code.insert_child(plain)
     # a link around a whole card (headline, summary, time, section) would come out as one glued word-run
     # ("housing protestsPedro Sanchez…ago UK"): separate the card's parts
     for a in root.css("a"):
         if a.css_first(_CARD_PARTS):
             for el in a.css("*"):
+                el.insert_after(" ")
+    # a table cell with a label and a description in separate blocks came out glued ("Standard requestOur own network"):
+    # separate them, including spans styled as blocks (class "block", "d-block")
+    for cell in root.css("td, th"):
+        for el in cell.css("*"):
+            if el.tag in _BLOCKS or _names(el.attributes.get("class")) & {"block", "d-block", "flex", "grid"}:
+                el.insert_before(" ")
                 el.insert_after(" ")
     for a in root.css("a[href]"):
         u = _abs(base, a.attributes.get("href"))
