@@ -1,0 +1,54 @@
+[project]
+name = "slimdown"
+version = "0.1.0"
+description = "Web pages slimmed down to the Markdown an AI needs: main content only, fewer tokens, only the sections you asked about. Library, CLI and MCP server."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
+requires-python = ">=3.10"
+authors = [{ name = "Skryp", email = "support@skryp.dev" }]
+keywords = ["markdown", "html-to-markdown", "llm", "ai-agents", "mcp", "web-scraping", "rag", "tokens", "readability"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Internet :: WWW/HTTP :: Indexing/Search",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Markup :: HTML",
+    "Topic :: Text Processing :: Markup :: Markdown",
+]
+dependencies = [
+    "httpx>=0.27",
+    "selectolax>=0.3.21",
+    "html-to-markdown>=3.0",
+]
+
+[project.optional-dependencies]
+tokens = ["tiktoken>=0.7"]
+mcp = ["mcp>=1.2"]
+all = ["tiktoken>=0.7", "mcp>=1.2"]
+
+[project.scripts]
+slimdown = "slimdown.cli:main"
+slimdown-mcp = "slimdown.mcp_server:main"
+
+[project.urls]
+Homepage = "https://github.com/cventuresza-tech/slimdown"
+Source = "https://github.com/cventuresza-tech/slimdown"
+Issues = "https://github.com/cventuresza-tech/slimdown/issues"
+Skryp = "https://skryp.dev"
+
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/slimdown"]
+
+[dependency-groups]
+dev = ["pytest>=8", "tiktoken>=0.7", "mcp>=1.2"]
+bench = ["tiktoken>=0.7", "markitdown[all]>=0.1", "trafilatura>=2.0", "crawl4ai>=0.6"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

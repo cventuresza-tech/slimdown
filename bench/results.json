@@ -1,0 +1,1765 @@
+{
+ "date": "2026-10-05",
+ "token_counter": "o200k_base",
+ "pages_compared": 39,
+ "pages_left_out": [
+  {
+   "url": "https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python",
+   "final_url": "https://stackoverflow.com/questions/231767/what-does-the-yield-keyword-do-in-python",
+   "status": 403,
+   "verdict": "blocked",
+   "reason": "Cloudflare challenge"
+  },
+  {
+   "url": "https://www.timeanddate.com/worldclock/south-africa/johannesburg",
+   "final_url": "https://www.timeanddate.com/worldclock/south-africa/johannesburg",
+   "status": 403,
+   "verdict": "blocked",
+   "reason": "Cloudflare challenge"
+  },
+  {
+   "url": "https://www.imdb.com/title/tt0111161/",
+   "final_url": "https://www.imdb.com/title/tt0111161/",
+   "status": 202,
+   "verdict": "blocked",
+   "reason": "aws-waf"
+  }
+ ],
+ "summary": [
+  {
+   "tool": "Trafilatura",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 161631,
+   "median_tokens": 2257,
+   "content_kept": 0.879
+  },
+  {
+   "tool": "slimdown (no links)",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 181078,
+   "median_tokens": 3084,
+   "content_kept": 0.933
+  },
+  {
+   "tool": "Trafilatura (links)",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 219496,
+   "median_tokens": 2257,
+   "content_kept": 0.876
+  },
+  {
+   "tool": "slimdown",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 238720,
+   "median_tokens": 3396,
+   "content_kept": 0.934
+  },
+  {
+   "tool": "Crawl4AI (fit)",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 267213,
+   "median_tokens": 3665,
+   "content_kept": 0.929
+  },
+  {
+   "tool": "Jina Reader",
+   "pages": 36,
+   "failed": 3,
+   "total_tokens": 286319,
+   "median_tokens": 4539,
+   "content_kept": 0.885
+  },
+  {
+   "tool": "Firecrawl",
+   "pages": 38,
+   "failed": 1,
+   "total_tokens": 421856,
+   "median_tokens": 5536,
+   "content_kept": 0.902
+  },
+  {
+   "tool": "MarkItDown",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 515967,
+   "median_tokens": 9100,
+   "content_kept": 0.994
+  },
+  {
+   "tool": "Crawl4AI (raw)",
+   "pages": 39,
+   "failed": 0,
+   "total_tokens": 559391,
+   "median_tokens": 9451,
+   "content_kept": 0.974
+  }
+ ],
+ "pages": [
+  {
+   "url": "https://docs.python.org/3/library/asyncio-task.html",
+   "consensus_sentences": 251,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 11353,
+     "kept": 0.992
+    },
+    "slimdown (no links)": {
+     "tokens": 10416,
+     "kept": 0.992
+    },
+    "MarkItDown": {
+     "tokens": 15513,
+     "kept": 0.956
+    },
+    "Trafilatura (links)": {
+     "tokens": 13655,
+     "kept": 0.956
+    },
+    "Trafilatura": {
+     "tokens": 10559,
+     "kept": 0.956
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 18151,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 16054,
+     "kept": 0.9
+    },
+    "Jina Reader": {
+     "tokens": 15821,
+     "kept": 0.988
+    },
+    "Firecrawl": {
+     "tokens": 17691,
+     "kept": 0.896
+    }
+   }
+  },
+  {
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control",
+   "consensus_sentences": 171,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 6126,
+     "kept": 0.988
+    },
+    "slimdown (no links)": {
+     "tokens": 4764,
+     "kept": 0.971
+    },
+    "MarkItDown": {
+     "tokens": 19396,
+     "kept": 0.959
+    },
+    "Trafilatura (links)": {
+     "tokens": 6152,
+     "kept": 0.772
+    },
+    "Trafilatura": {
+     "tokens": 4612,
+     "kept": 0.772
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 22855,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 7181,
+     "kept": 0.994
+    },
+    "Jina Reader": {
+     "tokens": 6904,
+     "kept": 0.977
+    },
+    "Firecrawl": {
+     "tokens": 8507,
+     "kept": 0.667
+    }
+   }
+  },
+  {
+   "url": "https://fastapi.tiangolo.com/tutorial/first-steps/",
+   "consensus_sentences": 66,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 3477,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 3364,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 7763,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 3960,
+     "kept": 0.939
+    },
+    "Trafilatura": {
+     "tokens": 3347,
+     "kept": 0.939
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 10856,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 4151,
+     "kept": 0.833
+    },
+    "Jina Reader": {
+     "tokens": 4278,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 4844,
+     "kept": 0.955
+    }
+   }
+  },
+  {
+   "url": "https://docs.djangoproject.com/en/5.2/topics/http/views/",
+   "consensus_sentences": 41,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 2422,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 1852,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 4684,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 2156,
+     "kept": 0.976
+    },
+    "Trafilatura": {
+     "tokens": 1696,
+     "kept": 0.976
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 5275,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 3345,
+     "kept": 0.854
+    },
+    "Jina Reader": {
+     "tokens": 2383,
+     "kept": 0.951
+    },
+    "Firecrawl": {
+     "tokens": 4276,
+     "kept": 0.976
+    }
+   }
+  },
+  {
+   "url": "https://kubernetes.io/docs/concepts/overview/",
+   "consensus_sentences": 73,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 2193,
+     "kept": 0.986
+    },
+    "slimdown (no links)": {
+     "tokens": 2005,
+     "kept": 0.986
+    },
+    "MarkItDown": {
+     "tokens": 24514,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1938,
+     "kept": 0.973
+    },
+    "Trafilatura": {
+     "tokens": 1869,
+     "kept": 0.973
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 25948,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 2151,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 31137,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 2312,
+     "kept": 0.959
+    }
+   }
+  },
+  {
+   "url": "https://www.postgresql.org/docs/current/tutorial-join.html",
+   "consensus_sentences": 33,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 2123,
+     "kept": 0.97
+    },
+    "slimdown (no links)": {
+     "tokens": 1706,
+     "kept": 0.97
+    },
+    "MarkItDown": {
+     "tokens": 2893,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1557,
+     "kept": 0.909
+    },
+    "Trafilatura": {
+     "tokens": 1485,
+     "kept": 0.909
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 3246,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 2727,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1511,
+     "kept": 0.879
+    },
+    "Firecrawl": {
+     "tokens": 2982,
+     "kept": 0.97
+    }
+   }
+  },
+  {
+   "url": "https://docs.github.com/en/get-started/start-your-journey/hello-world",
+   "consensus_sentences": 73,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1982,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 1854,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 5645,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 2099,
+     "kept": 0.986
+    },
+    "Trafilatura": {
+     "tokens": 1816,
+     "kept": 0.986
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 6631,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 2386,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 2646,
+     "kept": 0.986
+    },
+    "Firecrawl": {
+     "tokens": 2629,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://go.dev/doc/tutorial/getting-started",
+   "consensus_sentences": 54,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1530,
+     "kept": 0.981
+    },
+    "slimdown (no links)": {
+     "tokens": 1445,
+     "kept": 0.981
+    },
+    "MarkItDown": {
+     "tokens": 3112,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1483,
+     "kept": 0.981
+    },
+    "Trafilatura": {
+     "tokens": 1375,
+     "kept": 0.981
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 3398,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1535,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1661,
+     "kept": 0.963
+    },
+    "Firecrawl": {
+     "tokens": 1725,
+     "kept": 0.981
+    }
+   }
+  },
+  {
+   "url": "https://www.rust-lang.org/learn/get-started",
+   "consensus_sentences": 33,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1762,
+     "kept": 0.939
+    },
+    "slimdown (no links)": {
+     "tokens": 1433,
+     "kept": 0.939
+    },
+    "MarkItDown": {
+     "tokens": 2417,
+     "kept": 0.939
+    },
+    "Trafilatura (links)": {
+     "tokens": 1561,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 1400,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 2538,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1640,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1641,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 1890,
+     "kept": 0.97
+    }
+   }
+  },
+  {
+   "url": "https://react.dev/learn/state-a-components-memory",
+   "consensus_sentences": 102,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 5256,
+     "kept": 0.951
+    },
+    "slimdown (no links)": {
+     "tokens": 5095,
+     "kept": 0.951
+    },
+    "MarkItDown": {
+     "tokens": 6961,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 4954,
+     "kept": 0.922
+    },
+    "Trafilatura": {
+     "tokens": 4827,
+     "kept": 0.922
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 7816,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 5414,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1803,
+     "kept": 0.137
+    },
+    "Firecrawl": {
+     "tokens": 5912,
+     "kept": 0.873
+    }
+   }
+  },
+  {
+   "url": "https://huggingface.co/docs/transformers/index",
+   "consensus_sentences": 21,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1568,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 1372,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 2074,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 785,
+     "kept": 0.857
+    },
+    "Trafilatura": {
+     "tokens": 587,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 2467,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1604,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1001,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 1746,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Web_scraping",
+   "consensus_sentences": 144,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 10751,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 6700,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 13092,
+     "kept": 0.944
+    },
+    "Trafilatura (links)": {
+     "tokens": 11309,
+     "kept": 0.903
+    },
+    "Trafilatura": {
+     "tokens": 6281,
+     "kept": 0.91
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 17968,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 11731,
+     "kept": 0.965
+    },
+    "Jina Reader": {
+     "tokens": 12342,
+     "kept": 0.938
+    },
+    "Firecrawl": {
+     "tokens": 14682,
+     "kept": 0.944
+    }
+   }
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Markdown",
+   "consensus_sentences": 87,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 9640,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 5633,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 14842,
+     "kept": 0.977
+    },
+    "Trafilatura (links)": {
+     "tokens": 11997,
+     "kept": 0.931
+    },
+    "Trafilatura": {
+     "tokens": 5626,
+     "kept": 0.931
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 20041,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 10547,
+     "kept": 0.966
+    },
+    "Jina Reader": {
+     "tokens": 12509,
+     "kept": 0.989
+    },
+    "Firecrawl": {
+     "tokens": 16829,
+     "kept": 0.966
+    }
+   }
+  },
+  {
+   "url": "https://en.wikipedia.org/wiki/Johannesburg",
+   "consensus_sentences": 459,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 44510,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 25713,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 121907,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 51006,
+     "kept": 0.98
+    },
+    "Trafilatura": {
+     "tokens": 24896,
+     "kept": 0.98
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 141528,
+     "kept": 0.987
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 66171,
+     "kept": 0.985
+    },
+    "Jina Reader": {
+     "tokens": 23125,
+     "kept": 0.959
+    },
+    "Firecrawl": {
+     "tokens": 130399,
+     "kept": 0.948
+    }
+   }
+  },
+  {
+   "url": "https://paulgraham.com/greatwork.html",
+   "consensus_sentences": 643,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 14615,
+     "kept": 0.975
+    },
+    "slimdown (no links)": {
+     "tokens": 14615,
+     "kept": 0.975
+    },
+    "MarkItDown": {
+     "tokens": 14237,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 14226,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 13799,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 14626,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 13508,
+     "kept": 0.953
+    },
+    "Jina Reader": {
+     "tokens": 14649,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 16879,
+     "kept": 0.151
+    }
+   }
+  },
+  {
+   "url": "https://martinfowler.com/articles/microservices.html",
+   "consensus_sentences": 267,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 9802,
+     "kept": 0.981
+    },
+    "slimdown (no links)": {
+     "tokens": 8383,
+     "kept": 0.981
+    },
+    "MarkItDown": {
+     "tokens": 13745,
+     "kept": 0.993
+    },
+    "Trafilatura (links)": {
+     "tokens": 9573,
+     "kept": 0.974
+    },
+    "Trafilatura": {
+     "tokens": 7995,
+     "kept": 0.974
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 13937,
+     "kept": 0.996
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 10325,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 7185,
+     "kept": 0.906
+    },
+    "Firecrawl": {
+     "tokens": 11532,
+     "kept": 0.948
+    }
+   }
+  },
+  {
+   "url": "https://simonwillison.net/2024/Dec/31/llms-in-2024/",
+   "consensus_sentences": 269,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 14187,
+     "kept": 0.978
+    },
+    "slimdown (no links)": {
+     "tokens": 10280,
+     "kept": 0.978
+    },
+    "MarkItDown": {
+     "tokens": 15658,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 11884,
+     "kept": 0.963
+    },
+    "Trafilatura": {
+     "tokens": 8592,
+     "kept": 0.963
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 16116,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 15231,
+     "kept": 0.989
+    },
+    "Jina Reader": {
+     "tokens": 14796,
+     "kept": 0.974
+    },
+    "Firecrawl": {
+     "tokens": 16866,
+     "kept": 0.985
+    }
+   }
+  },
+  {
+   "url": "https://blog.cloudflare.com/the-road-to-quic/",
+   "consensus_sentences": 68,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 3358,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 3084,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 14824,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 3330,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 3058,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 22129,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 3665,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 4209,
+     "kept": 0.985
+    },
+    "Firecrawl": {
+     "tokens": 7323,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://stripe.com/blog/idempotency",
+   "consensus_sentences": 55,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1865,
+     "kept": 0.982
+    },
+    "slimdown (no links)": {
+     "tokens": 1678,
+     "kept": 0.982
+    },
+    "MarkItDown": {
+     "tokens": 10296,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1901,
+     "kept": 0.982
+    },
+    "Trafilatura": {
+     "tokens": 1674,
+     "kept": 0.982
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 11706,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 2081,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 2011,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 2236,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/",
+   "consensus_sentences": 156,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 4836,
+     "kept": 0.981
+    },
+    "slimdown (no links)": {
+     "tokens": 4529,
+     "kept": 0.981
+    },
+    "MarkItDown": {
+     "tokens": 6062,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 4694,
+     "kept": 0.981
+    },
+    "Trafilatura": {
+     "tokens": 4410,
+     "kept": 0.981
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 6168,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 4930,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 4801,
+     "kept": 0.981
+    },
+    "Firecrawl": {
+     "tokens": 4962,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://lilianweng.github.io/posts/2023-06-23-agent/",
+   "consensus_sentences": 285,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 10883,
+     "kept": 0.989
+    },
+    "slimdown (no links)": {
+     "tokens": 9713,
+     "kept": 0.989
+    },
+    "MarkItDown": {
+     "tokens": 11529,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 10046,
+     "kept": 0.87
+    },
+    "Trafilatura": {
+     "tokens": 8779,
+     "kept": 0.87
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 12759,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 11573,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 11205,
+     "kept": 0.982
+    },
+    "Firecrawl": {
+     "tokens": 12055,
+     "kept": 0.919
+    }
+   }
+  },
+  {
+   "url": "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
+   "consensus_sentences": 292,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 12517,
+     "kept": 0.979
+    },
+    "slimdown (no links)": {
+     "tokens": 11283,
+     "kept": 0.979
+    },
+    "MarkItDown": {
+     "tokens": 12795,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 12126,
+     "kept": 0.932
+    },
+    "Trafilatura": {
+     "tokens": 10874,
+     "kept": 0.932
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 12790,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 12434,
+     "kept": 0.99
+    },
+    "Jina Reader": {
+     "tokens": 12647,
+     "kept": 0.993
+    },
+    "Firecrawl": {
+     "tokens": 14162,
+     "kept": 0.873
+    }
+   }
+  },
+  {
+   "url": "https://danluu.com/cocktail-ideas/",
+   "consensus_sentences": 201,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 8884,
+     "kept": 0.97
+    },
+    "slimdown (no links)": {
+     "tokens": 8185,
+     "kept": 0.97
+    },
+    "MarkItDown": {
+     "tokens": 9100,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 7155,
+     "kept": 0.761
+    },
+    "Trafilatura": {
+     "tokens": 6512,
+     "kept": 0.761
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 1,
+     "kept": 0.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 8984,
+     "kept": 0.98
+    },
+    "Jina Reader": {
+     "tokens": 9314,
+     "kept": 0.995
+    },
+    "Firecrawl": {
+     "tokens": 9091,
+     "kept": 0.995
+    }
+   }
+  },
+  {
+   "url": "https://jvns.ca/blog/2023/02/28/some-notes-on-using-nix/",
+   "consensus_sentences": 82,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 4293,
+     "kept": 0.963
+    },
+    "slimdown (no links)": {
+     "tokens": 3970,
+     "kept": 0.963
+    },
+    "MarkItDown": {
+     "tokens": 4875,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 4677,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 3932,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 5287,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 4762,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 4883,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 4952,
+     "kept": 0.988
+    }
+   }
+  },
+  {
+   "url": "https://pypi.org/project/requests/",
+   "consensus_sentences": 12,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 10578,
+     "kept": 0.917
+    },
+    "slimdown (no links)": {
+     "tokens": 5117,
+     "kept": 0.917
+    },
+    "MarkItDown": {
+     "tokens": 20504,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1984,
+     "kept": 0.833
+    },
+    "Trafilatura": {
+     "tokens": 1322,
+     "kept": 0.833
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 22821,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 9664,
+     "kept": 0.833
+    },
+    "Jina Reader": {
+     "tokens": 100,
+     "kept": 0.0
+    },
+    "Firecrawl": {
+     "tokens": 21612,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://github.com/psf/requests",
+   "consensus_sentences": 10,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1886,
+     "kept": 0.8
+    },
+    "slimdown (no links)": {
+     "tokens": 970,
+     "kept": 0.8
+    },
+    "MarkItDown": {
+     "tokens": 4315,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 475,
+     "kept": 0.6
+    },
+    "Trafilatura": {
+     "tokens": 420,
+     "kept": 0.6
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 5014,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1285,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 11506,
+     "kept": 0.7
+    },
+    "Firecrawl": {
+     "tokens": 8920,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://books.toscrape.com/catalogue/a-light-in-the-attic_1000/index.html",
+   "consensus_sentences": 9,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 353,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 353,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 450,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 357,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 357,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 512,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 382,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 488,
+     "kept": 0.667
+    },
+    "Firecrawl": {
+     "tokens": 459,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.gov.uk/vat-registration",
+   "consensus_sentences": 29,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1490,
+     "kept": 0.483
+    },
+    "slimdown (no links)": {
+     "tokens": 1194,
+     "kept": 0.483
+    },
+    "MarkItDown": {
+     "tokens": 2920,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1418,
+     "kept": 0.966
+    },
+    "Trafilatura": {
+     "tokens": 1031,
+     "kept": 0.966
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 3520,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1751,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1373,
+     "kept": 0.931
+    },
+    "Firecrawl": {
+     "tokens": 1769,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.who.int/news-room/fact-sheets/detail/malaria",
+   "consensus_sentences": 85,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 3191,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 2803,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 6935,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 2923,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 2663,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 8338,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 3415,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 2962,
+     "kept": 0.953
+    },
+    "Firecrawl": {
+     "tokens": 3491,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.sars.gov.za/types-of-tax/personal-income-tax/",
+   "consensus_sentences": 68,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 7032,
+     "kept": 0.971
+    },
+    "slimdown (no links)": {
+     "tokens": 3744,
+     "kept": 0.971
+    },
+    "MarkItDown": {
+     "tokens": 11332,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 4467,
+     "kept": 0.868
+    },
+    "Trafilatura": {
+     "tokens": 2641,
+     "kept": 0.838
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 11937,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 8052,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 3453,
+     "kept": 0.618
+    },
+    "Firecrawl": {
+     "tokens": 9501,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.nhs.uk/conditions/flu/",
+   "consensus_sentences": 19,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1239,
+     "kept": 0.947
+    },
+    "slimdown (no links)": {
+     "tokens": 1045,
+     "kept": 0.947
+    },
+    "MarkItDown": {
+     "tokens": 1604,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1185,
+     "kept": 0.789
+    },
+    "Trafilatura": {
+     "tokens": 974,
+     "kept": 0.789
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 1926,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1378,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1256,
+     "kept": 0.895
+    },
+    "Firecrawl": {
+     "tokens": 1807,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.investopedia.com/terms/e/etf.asp",
+   "consensus_sentences": 145,
+   "voters": 5,
+   "tools": {
+    "slimdown": {
+     "tokens": 7544,
+     "kept": 0.986
+    },
+    "slimdown (no links)": {
+     "tokens": 4714,
+     "kept": 0.986
+    },
+    "MarkItDown": {
+     "tokens": 18056,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 4562,
+     "kept": 0.841
+    },
+    "Trafilatura": {
+     "tokens": 4562,
+     "kept": 0.841
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 15182,
+     "kept": 0.986
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1,
+     "kept": 0.0
+    },
+    "Firecrawl": {
+     "tokens": 12915,
+     "kept": 0.945
+    }
+   }
+  },
+  {
+   "url": "https://www.allrecipes.com/recipe/10813/best-chocolate-chip-cookies/",
+   "consensus_sentences": 41,
+   "voters": 4,
+   "tools": {
+    "slimdown": {
+     "tokens": 3396,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 2808,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 15774,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1588,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 1588,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 9451,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1,
+     "kept": 0.0
+    }
+   }
+  },
+  {
+   "url": "https://www.python.org/about/",
+   "consensus_sentences": 13,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 571,
+     "kept": 0.846
+    },
+    "slimdown (no links)": {
+     "tokens": 348,
+     "kept": 0.846
+    },
+    "MarkItDown": {
+     "tokens": 2994,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 269,
+     "kept": 0.846
+    },
+    "Trafilatura": {
+     "tokens": 228,
+     "kept": 0.846
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 3699,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1051,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1137,
+     "kept": 0.923
+    },
+    "Firecrawl": {
+     "tokens": 715,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.mozilla.org/en-US/firefox/new/",
+   "consensus_sentences": 21,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 923,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 621,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 6424,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 179,
+     "kept": 0.238
+    },
+    "Trafilatura": {
+     "tokens": 179,
+     "kept": 0.238
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 6490,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 1280,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 1129,
+     "kept": 0.81
+    },
+    "Firecrawl": {
+     "tokens": 3987,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.apple.com/iphone/",
+   "consensus_sentences": 120,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 1916,
+     "kept": 0.283
+    },
+    "slimdown (no links)": {
+     "tokens": 1681,
+     "kept": 0.283
+    },
+    "MarkItDown": {
+     "tokens": 39381,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1352,
+     "kept": 0.192
+    },
+    "Trafilatura": {
+     "tokens": 1152,
+     "kept": 0.183
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 34109,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 5394,
+     "kept": 0.983
+    },
+    "Jina Reader": {
+     "tokens": 39146,
+     "kept": 0.992
+    },
+    "Firecrawl": {
+     "tokens": 12917,
+     "kept": 0.992
+    }
+   }
+  },
+  {
+   "url": "https://httpbin.org/html",
+   "consensus_sentences": 19,
+   "voters": 5,
+   "tools": {
+    "slimdown": {
+     "tokens": 824,
+     "kept": 0.947
+    },
+    "slimdown (no links)": {
+     "tokens": 824,
+     "kept": 0.947
+    },
+    "MarkItDown": {
+     "tokens": 825,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 815,
+     "kept": 0.947
+    },
+    "Trafilatura": {
+     "tokens": 815,
+     "kept": 0.947
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 826,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 826,
+     "kept": 1.0
+    },
+    "Firecrawl": {
+     "tokens": 825,
+     "kept": 1.0
+    }
+   }
+  },
+  {
+   "url": "https://www.bbc.com/news",
+   "consensus_sentences": 14,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 2933,
+     "kept": 1.0
+    },
+    "slimdown (no links)": {
+     "tokens": 2039,
+     "kept": 1.0
+    },
+    "MarkItDown": {
+     "tokens": 7595,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 1441,
+     "kept": 1.0
+    },
+    "Trafilatura": {
+     "tokens": 1441,
+     "kept": 1.0
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 7285,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 2613,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 5587,
+     "kept": 0.857
+    },
+    "Firecrawl": {
+     "tokens": 5160,
+     "kept": 0.0
+    }
+   }
+  },
+  {
+   "url": "https://www.theguardian.com/international",
+   "consensus_sentences": 41,
+   "voters": 6,
+   "tools": {
+    "slimdown": {
+     "tokens": 4911,
+     "kept": 0.634
+    },
+    "slimdown (no links)": {
+     "tokens": 3745,
+     "kept": 0.634
+    },
+    "MarkItDown": {
+     "tokens": 18924,
+     "kept": 1.0
+    },
+    "Trafilatura (links)": {
+     "tokens": 2257,
+     "kept": 0.512
+    },
+    "Trafilatura": {
+     "tokens": 2257,
+     "kept": 0.512
+    },
+    "Crawl4AI (raw)": {
+     "tokens": 24044,
+     "kept": 1.0
+    },
+    "Crawl4AI (fit)": {
+     "tokens": 5990,
+     "kept": 1.0
+    },
+    "Jina Reader": {
+     "tokens": 13720,
+     "kept": 0.927
+    },
+    "Firecrawl": {
+     "tokens": 21296,
+     "kept": 0.366
+    }
+   }
+  }
+ ]
+}
