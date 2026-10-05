@@ -7,7 +7,7 @@ slimdown reads a web page and returns its main content as Markdown, in as few to
 It comes as a Python library, a CLI and an MCP server. It runs locally and needs no account or key. MIT licensed.
 
 ```bash
-pip install slimdown
+pip install "slimdown @ git+https://github.com/cventuresza-tech/slimdown"
 slimdown https://docs.python.org/3/library/asyncio-task.html --focus "timeouts" --tokens
 ```
 
@@ -19,19 +19,19 @@ These are 39 public pages: docs, Wikipedia, essays, blogs, news front pages, gov
 
 | Tool | Total tokens | Median per page | Content kept |
 |---|---:|---:|---:|
-| **slimdown** | **238,720** | **3,396** | **93.4%** |
+| **slimdown** | **236,550** | **3,191** | **95.0%** |
 | Crawl4AI (`fit_markdown`, pruning filter) | 267,213 | 3,665 | 92.9% |
 | Jina Reader (`r.jina.ai`) | 286,319 | 4,539 | 88.5% |
-| Firecrawl (`onlyMainContent`) | 421,856 | 5,536 | 90.2% |
-| MarkItDown | 515,967 | 9,100 | 99.4% |
-| Crawl4AI (`raw_markdown`) | 559,391 | 9,451 | 97.4% |
-| Trafilatura (markdown, links on) | 219,496 | 2,257 | 87.6% |
+| Firecrawl (`onlyMainContent`) | 421,856 | 5,536 | 90.1% |
+| MarkItDown | 515,967 | 9,100 | 99.5% |
+| Crawl4AI (`raw_markdown`) | 559,391 | 9,451 | 97.3% |
+| Trafilatura (markdown, links on) | 219,496 | 2,257 | 87.8% |
 
 What this shows:
 
-- **slimdown keeps the most content of the main-content tools.** It uses 43% fewer tokens than Firecrawl, 17% fewer than Jina Reader and 11% fewer than Crawl4AI's filtered output.
+- **slimdown keeps the most content of the main-content tools.** It uses 44% fewer tokens than Firecrawl, 17% fewer than Jina Reader and 11% fewer than Crawl4AI's filtered output.
 - **MarkItDown and Crawl4AI's raw output keep almost everything because they keep everything.** That includes menus and footers, at more than twice the tokens.
-- **Trafilatura is the leanest that keeps links, 9% under slimdown, but drops the most content.** Without links, Trafilatura uses 161,631 tokens and keeps 87.9%; `slimdown --no-links` uses 181,078 and keeps 93.3%.
+- **Trafilatura is the leanest that keeps links, 8% under slimdown, but drops the most content.** Without links, Trafilatura uses 161,631 tokens and keeps 88.1%; `slimdown --no-links` uses 178,964 and keeps 95.0%.
 
 Run 5 Oct 2026. Every local tool converted the same HTML, fetched once. Jina Reader and Firecrawl fetch pages themselves; Jina failed on 3 pages and Firecrawl on 1. Three pages that block plain HTTP (Stack Overflow, timeanddate, IMDb) were left out, because every HTML converter fails on them equally.
 
@@ -39,11 +39,13 @@ Reproduce it with `uv run --group bench python bench/run.py`. The script and pag
 
 ## Install
 
+Not on PyPI yet: install from GitHub.
+
 ```bash
-pip install slimdown                 # library and CLI
-pip install "slimdown[tokens]"       # exact token counts (tiktoken); otherwise estimated
-pip install "slimdown[mcp]"          # the MCP server
-uvx slimdown https://example.com     # or run it without installing
+pip install "slimdown @ git+https://github.com/cventuresza-tech/slimdown"            # library and CLI
+pip install "slimdown[tokens] @ git+https://github.com/cventuresza-tech/slimdown"    # exact token counts (tiktoken); otherwise estimated
+pip install "slimdown[mcp] @ git+https://github.com/cventuresza-tech/slimdown"       # the MCP server
+uvx --from git+https://github.com/cventuresza-tech/slimdown slimdown https://example.com   # or run it without installing
 ```
 
 Python 3.10+.
@@ -81,12 +83,12 @@ Give any MCP client, such as Claude Code, Claude Desktop, Cursor or Codex, a `re
 ```json
 {
   "mcpServers": {
-    "slimdown": { "command": "uvx", "args": ["--from", "slimdown[mcp]", "slimdown-mcp"] }
+    "slimdown": { "command": "uvx", "args": ["--from", "slimdown[mcp] @ git+https://github.com/cventuresza-tech/slimdown", "slimdown-mcp"] }
   }
 }
 ```
 
-For Claude Code: `claude mcp add slimdown -- uvx --from "slimdown[mcp]" slimdown-mcp`.
+For Claude Code: `claude mcp add slimdown -- uvx --from "slimdown[mcp] @ git+https://github.com/cventuresza-tech/slimdown" slimdown-mcp`.
 
 `read_page(url, focus?, links?, country?)` returns the page's lean Markdown under a short header: source, status and token count.
 

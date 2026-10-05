@@ -32,15 +32,15 @@
    "failed": 0,
    "total_tokens": 161631,
    "median_tokens": 2257,
-   "content_kept": 0.879
+   "content_kept": 0.881
   },
   {
    "tool": "slimdown (no links)",
    "pages": 39,
    "failed": 0,
-   "total_tokens": 181078,
-   "median_tokens": 3084,
-   "content_kept": 0.933
+   "total_tokens": 178964,
+   "median_tokens": 2803,
+   "content_kept": 0.95
   },
   {
    "tool": "Trafilatura (links)",
@@ -48,15 +48,15 @@
    "failed": 0,
    "total_tokens": 219496,
    "median_tokens": 2257,
-   "content_kept": 0.876
+   "content_kept": 0.878
   },
   {
    "tool": "slimdown",
    "pages": 39,
    "failed": 0,
-   "total_tokens": 238720,
-   "median_tokens": 3396,
-   "content_kept": 0.934
+   "total_tokens": 236550,
+   "median_tokens": 3191,
+   "content_kept": 0.95
   },
   {
    "tool": "Crawl4AI (fit)",
@@ -80,7 +80,7 @@
    "failed": 1,
    "total_tokens": 421856,
    "median_tokens": 5536,
-   "content_kept": 0.902
+   "content_kept": 0.901
   },
   {
    "tool": "MarkItDown",
@@ -88,7 +88,7 @@
    "failed": 0,
    "total_tokens": 515967,
    "median_tokens": 9100,
-   "content_kept": 0.994
+   "content_kept": 0.995
   },
   {
    "tool": "Crawl4AI (raw)",
@@ -96,7 +96,7 @@
    "failed": 0,
    "total_tokens": 559391,
    "median_tokens": 9451,
-   "content_kept": 0.974
+   "content_kept": 0.973
   }
  ],
  "pages": [
@@ -149,12 +149,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 6126,
-     "kept": 0.988
+     "tokens": 6129,
+     "kept": 0.982
     },
     "slimdown (no links)": {
-     "tokens": 4764,
-     "kept": 0.971
+     "tokens": 4767,
+     "kept": 0.965
     },
     "MarkItDown": {
      "tokens": 19396,
@@ -192,12 +192,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 3477,
-     "kept": 1.0
+     "tokens": 2900,
+     "kept": 0.985
     },
     "slimdown (no links)": {
-     "tokens": 3364,
-     "kept": 1.0
+     "tokens": 2787,
+     "kept": 0.985
     },
     "MarkItDown": {
      "tokens": 7763,
@@ -279,11 +279,11 @@
    "tools": {
     "slimdown": {
      "tokens": 2193,
-     "kept": 0.986
+     "kept": 1.0
     },
     "slimdown (no links)": {
      "tokens": 2005,
-     "kept": 0.986
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 24514,
@@ -407,12 +407,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 1530,
-     "kept": 0.981
+     "tokens": 1531,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 1445,
-     "kept": 0.981
+     "tokens": 1446,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 3112,
@@ -489,16 +489,16 @@
   },
   {
    "url": "https://react.dev/learn/state-a-components-memory",
-   "consensus_sentences": 102,
+   "consensus_sentences": 103,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 5256,
-     "kept": 0.951
+     "tokens": 5259,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 5095,
-     "kept": 0.951
+     "tokens": 5098,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 6961,
@@ -506,11 +506,11 @@
     },
     "Trafilatura (links)": {
      "tokens": 4954,
-     "kept": 0.922
+     "kept": 0.913
     },
     "Trafilatura": {
      "tokens": 4827,
-     "kept": 0.922
+     "kept": 0.913
     },
     "Crawl4AI (raw)": {
      "tokens": 7816,
@@ -522,11 +522,11 @@
     },
     "Jina Reader": {
      "tokens": 1803,
-     "kept": 0.137
+     "kept": 0.136
     },
     "Firecrawl": {
      "tokens": 5912,
-     "kept": 0.873
+     "kept": 0.874
     }
    }
   },
@@ -575,28 +575,28 @@
   },
   {
    "url": "https://en.wikipedia.org/wiki/Web_scraping",
-   "consensus_sentences": 144,
+   "consensus_sentences": 136,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 10751,
+     "tokens": 10580,
      "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 6700,
+     "tokens": 6534,
      "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 13092,
-     "kept": 0.944
+     "kept": 1.0
     },
     "Trafilatura (links)": {
      "tokens": 11309,
-     "kept": 0.903
+     "kept": 0.956
     },
     "Trafilatura": {
      "tokens": 6281,
-     "kept": 0.91
+     "kept": 0.963
     },
     "Crawl4AI (raw)": {
      "tokens": 17968,
@@ -604,42 +604,42 @@
     },
     "Crawl4AI (fit)": {
      "tokens": 11731,
-     "kept": 0.965
+     "kept": 0.963
     },
     "Jina Reader": {
      "tokens": 12342,
-     "kept": 0.938
+     "kept": 0.934
     },
     "Firecrawl": {
      "tokens": 14682,
-     "kept": 0.944
+     "kept": 0.941
     }
    }
   },
   {
    "url": "https://en.wikipedia.org/wiki/Markdown",
-   "consensus_sentences": 87,
+   "consensus_sentences": 85,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 9640,
+     "tokens": 9468,
      "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 5633,
+     "tokens": 5471,
      "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 14842,
-     "kept": 0.977
+     "kept": 1.0
     },
     "Trafilatura (links)": {
      "tokens": 11997,
-     "kept": 0.931
+     "kept": 0.953
     },
     "Trafilatura": {
      "tokens": 5626,
-     "kept": 0.931
+     "kept": 0.953
     },
     "Crawl4AI (raw)": {
      "tokens": 20041,
@@ -647,15 +647,15 @@
     },
     "Crawl4AI (fit)": {
      "tokens": 10547,
-     "kept": 0.966
+     "kept": 0.965
     },
     "Jina Reader": {
      "tokens": 12509,
-     "kept": 0.989
+     "kept": 0.988
     },
     "Firecrawl": {
      "tokens": 16829,
-     "kept": 0.966
+     "kept": 0.965
     }
    }
   },
@@ -665,12 +665,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 44510,
-     "kept": 1.0
+     "tokens": 43811,
+     "kept": 0.998
     },
     "slimdown (no links)": {
-     "tokens": 25713,
-     "kept": 1.0
+     "tokens": 25006,
+     "kept": 0.998
     },
     "MarkItDown": {
      "tokens": 121907,
@@ -704,16 +704,16 @@
   },
   {
    "url": "https://paulgraham.com/greatwork.html",
-   "consensus_sentences": 643,
+   "consensus_sentences": 645,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 14615,
-     "kept": 0.975
+     "tokens": 14637,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 14615,
-     "kept": 0.975
+     "tokens": 14637,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 14237,
@@ -733,7 +733,7 @@
     },
     "Crawl4AI (fit)": {
      "tokens": 13508,
-     "kept": 0.953
+     "kept": 0.95
     },
     "Jina Reader": {
      "tokens": 14649,
@@ -741,7 +741,7 @@
     },
     "Firecrawl": {
      "tokens": 16879,
-     "kept": 0.151
+     "kept": 0.15
     }
    }
   },
@@ -751,12 +751,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 9802,
-     "kept": 0.981
+     "tokens": 9806,
+     "kept": 0.996
     },
     "slimdown (no links)": {
-     "tokens": 8383,
-     "kept": 0.981
+     "tokens": 8387,
+     "kept": 0.996
     },
     "MarkItDown": {
      "tokens": 13745,
@@ -790,16 +790,16 @@
   },
   {
    "url": "https://simonwillison.net/2024/Dec/31/llms-in-2024/",
-   "consensus_sentences": 269,
+   "consensus_sentences": 268,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 14187,
-     "kept": 0.978
+     "tokens": 14081,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 10280,
-     "kept": 0.978
+     "tokens": 10222,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 15658,
@@ -807,11 +807,11 @@
     },
     "Trafilatura (links)": {
      "tokens": 11884,
-     "kept": 0.963
+     "kept": 0.966
     },
     "Trafilatura": {
      "tokens": 8592,
-     "kept": 0.963
+     "kept": 0.966
     },
     "Crawl4AI (raw)": {
      "tokens": 16116,
@@ -823,7 +823,7 @@
     },
     "Jina Reader": {
      "tokens": 14796,
-     "kept": 0.974
+     "kept": 0.978
     },
     "Firecrawl": {
      "tokens": 16866,
@@ -880,12 +880,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 1865,
-     "kept": 0.982
+     "tokens": 1866,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 1678,
-     "kept": 0.982
+     "tokens": 1679,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 10296,
@@ -923,12 +923,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 4836,
-     "kept": 0.981
+     "tokens": 4839,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 4529,
-     "kept": 0.981
+     "tokens": 4533,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 6062,
@@ -966,12 +966,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 10883,
-     "kept": 0.989
+     "tokens": 10884,
+     "kept": 0.993
     },
     "slimdown (no links)": {
-     "tokens": 9713,
-     "kept": 0.989
+     "tokens": 9714,
+     "kept": 0.993
     },
     "MarkItDown": {
      "tokens": 11529,
@@ -1005,16 +1005,16 @@
   },
   {
    "url": "https://karpathy.github.io/2015/05/21/rnn-effectiveness/",
-   "consensus_sentences": 292,
+   "consensus_sentences": 291,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 12517,
-     "kept": 0.979
+     "tokens": 12539,
+     "kept": 0.938
     },
     "slimdown (no links)": {
-     "tokens": 11283,
-     "kept": 0.979
+     "tokens": 11305,
+     "kept": 0.938
     },
     "MarkItDown": {
      "tokens": 12795,
@@ -1022,11 +1022,11 @@
     },
     "Trafilatura (links)": {
      "tokens": 12126,
-     "kept": 0.932
+     "kept": 0.931
     },
     "Trafilatura": {
      "tokens": 10874,
-     "kept": 0.932
+     "kept": 0.931
     },
     "Crawl4AI (raw)": {
      "tokens": 12790,
@@ -1034,7 +1034,7 @@
     },
     "Crawl4AI (fit)": {
      "tokens": 12434,
-     "kept": 0.99
+     "kept": 0.993
     },
     "Jina Reader": {
      "tokens": 12647,
@@ -1042,7 +1042,7 @@
     },
     "Firecrawl": {
      "tokens": 14162,
-     "kept": 0.873
+     "kept": 0.876
     }
    }
   },
@@ -1052,12 +1052,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 8884,
-     "kept": 0.97
+     "tokens": 8888,
+     "kept": 0.995
     },
     "slimdown (no links)": {
-     "tokens": 8185,
-     "kept": 0.97
+     "tokens": 8189,
+     "kept": 0.995
     },
     "MarkItDown": {
      "tokens": 9100,
@@ -1095,12 +1095,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 4293,
-     "kept": 0.963
+     "tokens": 4294,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 3970,
-     "kept": 0.963
+     "tokens": 3971,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 4875,
@@ -1138,11 +1138,11 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 10578,
+     "tokens": 10580,
      "kept": 0.917
     },
     "slimdown (no links)": {
-     "tokens": 5117,
+     "tokens": 5119,
      "kept": 0.917
     },
     "MarkItDown": {
@@ -1224,11 +1224,11 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 353,
+     "tokens": 354,
      "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 353,
+     "tokens": 354,
      "kept": 1.0
     },
     "MarkItDown": {
@@ -1353,12 +1353,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 7032,
-     "kept": 0.971
+     "tokens": 7036,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 3744,
-     "kept": 0.971
+     "tokens": 3748,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 11332,
@@ -1439,12 +1439,12 @@
    "voters": 5,
    "tools": {
     "slimdown": {
-     "tokens": 7544,
-     "kept": 0.986
+     "tokens": 7509,
+     "kept": 0.993
     },
     "slimdown (no links)": {
-     "tokens": 4714,
-     "kept": 0.986
+     "tokens": 4679,
+     "kept": 0.993
     },
     "MarkItDown": {
      "tokens": 18056,
@@ -1478,11 +1478,11 @@
    "voters": 4,
    "tools": {
     "slimdown": {
-     "tokens": 3396,
+     "tokens": 2905,
      "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 2808,
+     "tokens": 2317,
      "kept": 1.0
     },
     "MarkItDown": {
@@ -1513,11 +1513,11 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 571,
+     "tokens": 572,
      "kept": 0.846
     },
     "slimdown (no links)": {
-     "tokens": 348,
+     "tokens": 349,
      "kept": 0.846
     },
     "MarkItDown": {
@@ -1599,12 +1599,12 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 1916,
-     "kept": 0.283
+     "tokens": 1917,
+     "kept": 0.292
     },
     "slimdown (no links)": {
-     "tokens": 1681,
-     "kept": 0.283
+     "tokens": 1682,
+     "kept": 0.292
     },
     "MarkItDown": {
      "tokens": 39381,
@@ -1642,12 +1642,12 @@
    "voters": 5,
    "tools": {
     "slimdown": {
-     "tokens": 824,
-     "kept": 0.947
+     "tokens": 825,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 824,
-     "kept": 0.947
+     "tokens": 825,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 825,
@@ -1681,11 +1681,11 @@
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 2933,
+     "tokens": 2934,
      "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 2039,
+     "tokens": 2040,
      "kept": 1.0
     },
     "MarkItDown": {
@@ -1720,32 +1720,32 @@
   },
   {
    "url": "https://www.theguardian.com/international",
-   "consensus_sentences": 41,
+   "consensus_sentences": 42,
    "voters": 6,
    "tools": {
     "slimdown": {
-     "tokens": 4911,
-     "kept": 0.634
+     "tokens": 4916,
+     "kept": 1.0
     },
     "slimdown (no links)": {
-     "tokens": 3745,
-     "kept": 0.634
+     "tokens": 3750,
+     "kept": 1.0
     },
     "MarkItDown": {
      "tokens": 18924,
-     "kept": 1.0
+     "kept": 0.976
     },
     "Trafilatura (links)": {
      "tokens": 2257,
-     "kept": 0.512
+     "kept": 0.524
     },
     "Trafilatura": {
      "tokens": 2257,
-     "kept": 0.512
+     "kept": 0.524
     },
     "Crawl4AI (raw)": {
      "tokens": 24044,
-     "kept": 1.0
+     "kept": 0.976
     },
     "Crawl4AI (fit)": {
      "tokens": 5990,
@@ -1753,11 +1753,11 @@
     },
     "Jina Reader": {
      "tokens": 13720,
-     "kept": 0.927
+     "kept": 0.929
     },
     "Firecrawl": {
      "tokens": 21296,
-     "kept": 0.366
+     "kept": 0.357
     }
    }
   }
